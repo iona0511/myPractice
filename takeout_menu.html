@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            color: rgb(47, 46, 46);
+            box-sizing: border-box;
+        }
+        .menu{
+            display: flex;
+            justify-content: center;
+        }
+        .forhere{
+            display: block;
+        }
+        .togo{
+            display: none;
+        }
+
+        .takeout{
+            text-align: center;
+            font-size: 20px;
+            width: 150px;
+            padding: 20px;
+            margin: 0 15px;
+            border-radius: 10px 10px 0 0 /10px 10px 0 0;
+            background-color: rgb(182, 240, 226);
+        }
+        .delivery{
+            text-align: center;
+            font-size: 20px;
+            width: 150px;
+            padding: 20px;
+            margin: 0 15px;
+            border-radius: 10px 10px 0 0 /10px 10px 0 0;
+            background-color: rgb(171, 174, 173);
+        }
+        
+        .btn{
+            display: flex;
+        }
+        .location{
+            width: 95vw;
+            border: 1.8px solid rgb(176, 171, 171);
+            border-radius: 10px;
+        }
+        .city,.district{
+            width: 47vw;
+            height: 50px;
+            border: 1px solid rgb(176, 171, 171);
+            border-radius: 10px;     
+            color: rgb(72, 69, 69);
+            font-size: 18px;       
+        }
+        label{
+            line-height: 2.5rem;
+        }
+        .presstobook{
+            width: 95vw;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: rgb(217, 238, 214);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        input{
+            border: 0px;
+            width: 100px;
+            height: 50px;
+            padding-left: 140px;
+            padding-right: 140px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .address{
+            margin-top: 10px;
+            width: 78vw;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .select{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        a{
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-left: 35px;
+            padding: 5px;
+        }
+        a:hover{
+            color: rgb(205, 111, 3);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="select">
+            <a href="#">套餐組合</a>
+            <a href="">莊園咖啡</a>
+            <a href="">手沖咖啡</a>
+            <a href="">其他飲品</a>
+            <a href="">瑪芬堡</a>
+            <a href="">貝果</a>
+            <a href="">吐司</a>
+            
+        </div>
+        <figure>
+            <img src="./coffee/coffee-gcc8d57e85_1920.jpg" alt="" width="100%" height="400px">
+        </figure>
+        <div class="menu">
+            <form class="forhere" id="forhere">
+                <div class="btn">
+
+                    <div class="takeout" id="takeout" name="" onclick="turnToTakeout()">店內餐飲</div>
+                    <div class="delivery" id="delivery" name="" onclick="turnTodelivery()">外帶自取</div>
+                </div>
+                <fieldset class="location" >
+                    <label>地點依縣市尋找：</label><br/>
+                    <select class="city" name="" id="">
+                        <option value="" name="">請選擇</option>
+                        <option value="" name="">新北市</option>
+                        <option value="" name="">台北市</option>
+                        <option value="" name="">桃園市</option>
+                        <option value="" name="">新竹市</option>
+                        <option value="" name="">新竹縣</option>
+                    </select>
+                    <select class="district" name="" id="">
+                        <option value="" name="">請選擇</option>
+                        <option value="" name="">大安區</option>
+                        <option value="" name="">信義區</option>
+                        <option value="" name="">中正區</option>
+                        <option value="" name="">中山區</option>
+                        <option value="" name="">松山區</option>
+                    </select>
+                    <div class="presstobook">前往訂餐</div>
+                </fieldset>           
+            </form>
+
+            <form class="togo" id="togo">
+                <div class="btn">
+                    <div class="takeout" id="takeout" name="" onclick="turnToTakeout()">店內餐飲</div>
+                    <div class="delivery" id="delivery" name="" onclick="turnTodelivery()">外帶自取</div>
+                </div>
+                <fieldset class="location">
+                    <input class="address" type="text" placeholder="請輸入包含縣市區的完整外送地址">
+                    <div class="presstobook">前往訂餐</div>
+                </fieldset>           
+            </form>
+        </div>
+        <div>
+            <div>
+            <h4>套餐組合</h4>
+        
+        
+        
+        
+            </div>
+
+
+            <h4>莊園咖啡</h4>
+            <h4>手沖咖啡</h4>
+            <h4>其他飲品</h4>
+            <h4>瑪芬堡</h4>
+            <h4>貝果</h4>
+            <h4>吐司</h4>
+        </div>
+
+
+
+    </div>
+
+    <script>
+        const foodTakeout = document.querySelector('.forhere');
+        const foodDelivery = document.querySelector('.togo'); 
+        const takeout = document.querySelector('.takeout');
+        const delivery = document.querySelector('.delivery');
+
+        const turnTodelivery= ()=>{
+            foodTakeout.style.display = 'none';
+            foodDelivery.style.display = 'block';
+            delivery.style.backgroundColor = 'rgb(182, 240, 226)';
+            takeout.style.backgroundColor = 'rgb(171, 174, 173)';
+        };
+        const turnToTakeout= ()=>{
+            foodTakeout.style.display = 'block';
+            foodDelivery.style.display = 'none';
+        };
+        takeout.addEventListener("click", turnToTakeout);
+        delivery.addEventListener("click",turnTodelivery);
+        
+        
+
+    </script>
+    
+</body>
+</html>
